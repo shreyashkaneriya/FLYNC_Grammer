@@ -1,0 +1,101 @@
+[tool.poetry]
+name = "flync"
+version = "0.0.0"
+packages = [
+    { include = "flync", from = "src" }
+]
+description = "FLYNC language is a declarative, modular format for describing the configuration of automotive networks and applications. It captures key elements of the vehicle's E/E architecture—such as ECUs, SOME/IP interfaces, and system topology—in a structured and human-readable way."
+authors = [
+    "Iago Alvarez <iago.alvarez@technica-engineering.de>",
+    "Dr. Lars Völker <lars.voelker@technica-engineering.de>"
+]
+readme = "README.md"
+license = "Apache-2.0"
+homepage = "https://flync-language.com"
+repository = "https://github.com/Technica-Engineering/FLYNC"
+documentation = "https://github.com/Technica-Engineering/FLYNC"
+keywords = ["automotive", "network", "someip", "topology", "flync"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+[project]
+license-files = [
+    "LICENSE"
+]
+
+[tool.poetry.dependencies]
+python = "<4.0, >=3.12"
+importlib-metadata = ">=8.6.1"
+click = "8.3.1"
+construct = "2.10.70"
+jinja2 = "*"
+rich = "*"
+typer = "*"
+prettytable = "*"
+pydantic = "2.12.5"
+pydantic_yaml = "1.6.0"
+pyyaml = "6.0.3"
+myst-parser = "^5.0.0"
+pydantic-extra-types = "^2.11.0"
+semver = "^3.0"
+
+[tool.poetry.group.docs.dependencies]
+furo = ">=2024.0.0"
+sphinx = ">=7.0"
+roman-numerals = "4.1.0"
+sphinx-needs = "6.3.0"
+sphinx-autobuild = "2025.8.25"
+sphinx-autodoc-typehints = "*"
+pydantic-2-mermaid = {git = "https://github.com/LarsVoelker/pydantic-2-mermaid.git", rev = "f704b8a2eb3d483ec23ab6b3a7e248511bd23321"}
+sphinxcontrib-plantuml = "0.31"
+sphinx-copybutton = "0.5.2"
+sphinx-design = "^0.7.0"
+sphinxcontrib-mermaid = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.4.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+coverage = "*"
+iniconfig = "*"
+pluggy = "*"
+python-dotenv = "*"
+black = "^26.1.0"
+mypy = "^1.18.2"
+pytest-xdist = "^3.8.0"
+
+[tool.poetry.group.static-analysis.dependencies]
+black = "^26.1.0"
+colorama = "^0.4.6"
+flake8 = "^7.3.0"
+flake8-html = "^0.4.3"
+isort = "^8.0.0"
+mypy = "^1.18.2"
+types-pyyaml = "^6.0.12.20250915"
+
+[tool.poetry.group.deploy.dependencies]
+twine = "^6.2.0"
+
+[tool.pytest.ini_options]
+addopts = "-n 0 --cov=flync --cov-report=term --cov-report=xml --junitxml=report.xml"
+testpaths = ["tests"]
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+pattern = '(?P<base>\d+\.\d+\.\d+)'
+pattern-prefix = "release-"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=2.1.3,<2.2.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"

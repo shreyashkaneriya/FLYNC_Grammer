@@ -1,0 +1,13 @@
+connections:
+  - type: ecu_port_to_switch_port
+    id: conn1
+    ecu_port: z1_p1
+    switch_port: z1_s1_p0
+  - type: switch_port_to_controller_interface
+    id: conn2
+    switch_port: z1_s1_p1
+    controller_interface: z1_c1_iface1
+  - type: switch_port_to_controller_interface
+    id: conn3
+    switch_port: z1_s1_p2
+    controller_interface: z1_c2_iface1

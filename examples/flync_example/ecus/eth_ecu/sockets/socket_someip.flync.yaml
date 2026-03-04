@@ -1,0 +1,34 @@
+vlan_name: eth_ecu_c1_i1_viface1
+
+sockets:
+  - name: sd_multicast_socket
+    endpoint_address: 10.0.40.7
+    port_no: 30490
+    protocol: udp
+    deployments:
+      - deployment_type: someip_sd
+        multicast:
+          ip_address: 224.244.224.245
+          port: 30490
+          ip_ttl: 1
+  - name: someip_udp_socket_1
+    endpoint_address: 10.0.40.7
+    port_no: 30500
+    protocol: udp
+    deployments:
+      - deployment_type: someip_provider
+        service: 0x101
+        instance_id: 1
+        major_version: 1
+        someip_sd_timings_profile: server_default
+  - name: someip_tcp_socket_1
+    endpoint_address: 10.0.40.7
+    port_no: 30502
+    protocol: tcp
+    tcp_profile: 1
+    deployments:
+      - deployment_type: someip_provider
+        service: 0x101
+        instance_id: 2
+        major_version: 1
+        someip_sd_timings_profile: server_default

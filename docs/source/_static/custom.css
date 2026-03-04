@@ -1,0 +1,80 @@
+/* Make main content take full width */
+.wy-nav-content {
+  max-width: 100% !important;
+}
+
+/* custom.css */
+.wy-side-nav-search .logo {
+    max-height: none;       /* remove max-height limit */
+    height: auto;
+    width: 100%;            /* scale to sidebar width, or adjust */
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+
+div[style*="overflow-x"] {
+  overflow-x: auto !important;
+  max-width: none !important;
+}
+div[style*="overflow-x"] img {
+  max-width: none !important;
+  min-width: 4000px; /* Matches or exceeds the image width */
+}
+
+.toctree-wrapper {
+  margin-left: 1em;
+}
+
+.toctree-l1 > a {
+  font-weight: bold;
+}
+
+.toctree-l2 {
+  margin-left: 1.5em;
+}
+
+.toctree-l3 {
+  margin-left: 2em;
+}
+
+.autosummary {
+  margin-bottom: 1em;
+}
+
+.autosummary dl {
+  display: block;
+  margin-left: 1em;
+}
+
+@media screen and (min-width: 960px) {
+  .main {
+    justify-content: flex-start !important;
+  }
+
+  .content {
+    font-family: "Inter";
+    width: 65% !important;           /* Use 75% of full page width */
+    max-width: 80rem !important;      /* Remove default width limit */
+    margin-left: 1rem !important;    /* Keep a fixed left margin */
+  }
+}
+
+/* Optional: reduce the width of the sidebar */
+.sidebar-drawer, .sidebar {
+    max-width: 18rem;
+}
+.sidebar-container {
+    font-family: "Inter", monospace;
+}
+
+/* Hide second and third level TOC entries in the right sidebar */
+.toc-sidebar .toc-tree .toc-tree {
+    display: none;
+}
+
+
+/* Costum image formatting */
+img.ecu-svg {
+    width: 800px;
+}
