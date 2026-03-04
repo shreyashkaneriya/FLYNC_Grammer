@@ -26,6 +26,12 @@ from flync.model.flync_4_someip.service_interface import (
     SOMEIPRequestResponseMethod,
     SOMEIPServiceInterface,
 )
+
+from flync.model.flync_4_someip.input_signal import (
+    EthernetSignal,
+    EthernetSignalsInput,
+)
+
 from flync.model.flync_4_someip.someip_datatypes import (
     AllTypes,
     ArrayType,
@@ -97,4 +103,6 @@ __all__ = [
     "SDConfig",
     "SDTimings",
     "SOMEIPTP",
+    "EthernetSignal",
+    "EthernetSignalsInput",
 ]

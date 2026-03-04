@@ -1,0 +1,24 @@
+vlan_name: eth_ecu_c1_i1_viface1
+sockets:
+  - name: sd_multicast_socket
+    endpoint_address: 192.168.178.100
+    port_no: 30490
+    protocol: udp
+    deployments:
+      - deployment_type: someip_sd
+        multicast:
+          ip_address: 224.224.224.255
+          port: 30490
+          ip_ttl: 1
+
+  - name: front_wiper_provider_udp
+    endpoint_address: 192.168.178.100
+    port_no: 30509
+    protocol: udp
+    deployments:
+      - deployment_type: someip_provider
+        service: 0x0001
+        instance_id: 0x0001
+        major_version: 1
+        minor_version: 0
+        someip_sd_timings_profile: server_default

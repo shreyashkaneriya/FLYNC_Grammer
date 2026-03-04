@@ -1,0 +1,5 @@
+connections:
+  - type: ecu_port_to_ecu_port
+    id: conn_eth_to_hpc
+    ecu1_port: eth_ecu_p1
+    ecu2_port: hpc1_p1

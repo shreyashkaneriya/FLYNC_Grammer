@@ -1,0 +1,35 @@
+meta:
+  type: someip_service
+  author: Akshaya
+  compatible_flync_version:
+    version_schema: semver
+    version: 0.9.0
+
+name: Eth_Signal_FrontWiperStateEvent
+id: 0x0001
+major_version: 1
+minor_version: 0
+
+events:
+  - name: FrontWiperStateEvent
+    id: 0x0001
+    description: Dummy Ethernet signal for testing
+    parameters:
+      - name: FrontWiperState
+        datatype:
+          type: uint8
+
+eventgroups:
+  - name: Eth_Routing_Group_1
+    id: 0x0001
+    multicast_threshold: 1
+    events:
+      - name: FrontWiperStateEvent
+        id: 0x0001
+        parameters:
+          - name: FrontWiperState
+            datatype:
+              type: uint8
+
+methods: []
+fields: []
